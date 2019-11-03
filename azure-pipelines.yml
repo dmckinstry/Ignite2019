@@ -36,3 +36,9 @@ steps:
 - task: BatchScript@1
   inputs:
     filename: 'src/PokerLeagueManager.UI.Web/BuildAngular.bat'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
